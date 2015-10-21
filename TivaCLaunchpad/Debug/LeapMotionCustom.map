@@ -1,0 +1,780 @@
+******************************************************************************
+                  TI ARM Linker PC v5.2.5                      
+******************************************************************************
+>> Linked Wed Oct 21 15:49:13 2015
+
+OUTPUT FILE NAME:   <LeapMotionCustom.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00002c55
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  000041fe  0003be02  R  X
+  SRAM                  20000000   00008000  00001195  00006e6b  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00004200   00004200    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00003bb0   00003bb0    r-x .text
+  00003e1c    00003e1c    00000312   00000312    r-- .const
+  00004130    00004130    000000d0   000000d0    r-- .cinit
+20000000    20000000    00001198   00000000    rw-
+  20000000    20000000    00000e69   00000000    rw- .bss
+  20000e6c    20000e6c    00000200   00000000    rw- .stack
+  2000106c    2000106c    0000012c   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00003bb0     
+                  0000026c    00000914     uartstdio.obj (.text)
+                  00000b80    0000038c     main.obj (.text)
+                  00000f0c    00000170     usblib.lib : usbdma.obj (.text:USBLibDMAInit)
+                  0000107c    00000150                : usbdenum.obj (.text:USBDEP0StateTxConfig)
+                  000011cc    00000150                : usbdenum.obj (.text:USBDeviceIntHandlerInternal)
+                  0000131c    00000148                : usbdenum.obj (.text:USBDCDInit)
+                  00001464    00000140                : usbdconfig.obj (.text:USBDeviceConfig)
+                  000015a4    00000130     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  000016d4    0000010c                   : sysctl.obj (.text:SysCtlClockGet)
+                  000017e0    000000f0                   : sysctl.obj (.text:SysCtlClockSet)
+                  000018d0    000000ea     usblib.lib : usbdma.obj (.text:iDMAUSBTransfer)
+                  000019ba    00000002                : usbdma.obj (.text:iDMAUSBArbSizeSet)
+                  000019bc    000000e4                : usbdenum.obj (.text:USBDGetDescriptor)
+                  00001aa0    000000d8                : usbdenum.obj (.text:USBDeviceEnumHandler)
+                  00001b78    000000c0                : usbdma.obj (.text:uDMAUSBChannelAllocate)
+                  00001c38    000000bc                : usbbuffer.obj (.text:HandleRxAvailable)
+                  00001cf4    000000ba                : usbdma.obj (.text:uDMAUSBTransfer)
+                  00001dae    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00001e4a    00000002     usblib.lib : usbdma.obj (.text:iDMAUSBUnitSizeSet)
+                  00001e4c    00000098                : usbdenum.obj (.text:USBDSetInterface)
+                  00001ee4    00000094                : usbbuffer.obj (.text:ScheduleNextTransmission)
+                  00001f78    0000008c                : usbdenum.obj (.text:USBDSetConfiguration)
+                  00002004    0000008c                : usbdconfig.obj (.text:USBDeviceConfigAlternate)
+                  00002090    00000084                : usbdma.obj (.text:iDMAUSBChannelAllocate)
+                  00002114    00000084     driverlib.lib : udma.obj (.text:uDMAChannelTransferSet)
+                  00002198    0000007c     usblib.lib : usbdenum.obj (.text:USBDClearFeature)
+                  00002214    0000007a     driverlib.lib : usb.obj (.text:USBDevEndpointConfigSet)
+                  0000228e    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  00002308    00000074     usblib.lib : usbdenum.obj (.text:USBDGetStatus)
+                  0000237c    00000072                : usbdbulk.obj (.text:USBDBulkPacketRead)
+                  000023ee    00000072                : usbdma.obj (.text:uDMAUSBArbSizeSet)
+                  00002460    00000070                : usbdbulk.obj (.text:USBDBulkCompositeInit)
+                  000024d0    00000070                : usbdenum.obj (.text:USBDEP0StateTx)
+                  00002540    00000070                : usbdma.obj (.text:uDMAUSBUnitSizeSet)
+                  000025b0    0000006c     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.obj (.text)
+                  0000261c    0000006a                                   : copy_decompress_rle.obj (.text)
+                  00002686    00000002                                   : i_div0.obj (.text)
+                  00002688    00000068     driverlib.lib : interrupt.obj (.text:IntDisable)
+                  000026f0    00000068                   : interrupt.obj (.text:IntEnable)
+                  00002758    00000068     usblib.lib : usbdenum.obj (.text:USBDSetFeature)
+                  000027c0    00000064     driverlib.lib : interrupt.obj (.text:IntIsEnabled)
+                  00002824    00000064     usblib.lib : usbdma.obj (.text:uDMAUSBChannelEnable)
+                  00002888    00000060                : usbdbulk.obj (.text:HandleDevice)
+                  000028e8    00000060                : usbdbulk.obj (.text:ProcessDataFromHost)
+                  00002948    00000060                : usbbuffer.obj (.text:USBBufferEventCallback)
+                  000029a8    00000060                : usbdenum.obj (.text:USBDReadAndDispatchRequest)
+                  00002a08    0000005e     driverlib.lib : usb.obj (.text:USBDevEndpointStatusClear)
+                  00002a66    00000056     usblib.lib : usbdma.obj (.text:uDMAUSBChannelRelease)
+                  00002abc    00000054                : usbdbulk.obj (.text:USBDBulkPacketWrite)
+                  00002b10    00000052                : usbulpi.obj (.text:ULPIConfigSet)
+                  00002b62    00000002                : usbdma.obj (.text:uDMAUSBChannelIntDisable)
+                  00002b64    00000050     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReset)
+                  00002bb4    00000050     usblib.lib : usbdcdesc.obj (.text:USBDCDConfigDescGet)
+                  00002c04    00000050                : usbdenum.obj (.text:USBDeviceResumeTickHandler)
+                  00002c54    00000050     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00002ca4    0000004e     driverlib.lib : usb.obj (.text:USBDevEndpointStallClear)
+                  00002cf2    0000004c     usblib.lib : usbdcdesc.obj (.text:ConfigAlternateInterfaceGet)
+                  00002d3e    0000004c                : usbdconfig.obj (.text:GetEPDescriptorType)
+                  00002d8a    0000004c     driverlib.lib : usb.obj (.text:USBEndpointDMAConfigSet)
+                  00002dd6    00000002     usblib.lib : usbdma.obj (.text:uDMAUSBChannelIntEnable)
+                  00002dd8    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00002e24    0000004a     usblib.lib : usbdma.obj (.text:iDMAUSBChannelEnable)
+                  00002e6e    0000004a                : usbdma.obj (.text:uDMAUSBChannelDisable)
+                  00002eb8    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  00002f00    00000048     usblib.lib : usbdenum.obj (.text:USBDStringIndexFromRequest)
+                  00002f48    00000048                : usbdenum.obj (.text:USBDeviceEnumResetHandler)
+                  00002f90    00000048     driverlib.lib : udma.obj (.text:uDMAChannelAttributeDisable)
+                  00002fd8    00000044     usblib.lib : usbdbulk.obj (.text:USBDBulkInit)
+                  0000301c    00000044                : usbdenum.obj (.text:USBDCDDeviceInfoInit)
+                  00003060    00000044                : usbdenum.obj (.text:USBDGetInterface)
+                  000030a4    00000044     driverlib.lib : usb.obj (.text:USBEndpointDataGet)
+                  000030e8    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.text)
+                  0000312c    00000040                                   : u_divt2.obj (.text)
+                  0000316c    0000003c     usblib.lib : usbdma.obj (.text:iDMAUSBChannelRelease)
+                  000031a8    0000003a                : usbdcdesc.obj (.text:USBDCDConfigGetInterfaceEndpoint)
+                  000031e2    0000003a     driverlib.lib : usb.obj (.text:USBFIFOConfigSet)
+                  0000321c    00000038     usblib.lib : usbtick.obj (.text:InternalUSBRegisterTickHandler)
+                  00003254    00000038     driverlib.lib : usb.obj (.text:USBIntStatusControl)
+                  0000328c    00000038     usblib.lib : usbringbuf.obj (.text:USBRingBufAdvanceWrite)
+                  000032c4    00000036                : usbdbulk.obj (.text:HandleEndpoints)
+                  000032fa    00000002     --HOLE-- [fill = 0]
+                  000032fc    00000034                : usbtick.obj (.text:InternalUSBStartOfFrameTick)
+                  00003330    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00003364    00000034     usblib.lib : usbdma.obj (.text:iDMAUSBChannelStatus)
+                  00003398    00000032                : usbdcdesc.obj (.text:NextConfigDescGet)
+                  000033ca    00000032                : usbdbulk.obj (.text:ProcessDataToHost)
+                  000033fc    00000032     driverlib.lib : usb.obj (.text:USBDevEndpointStall)
+                  0000342e    00000032     usblib.lib : usbdma.obj (.text:iDMAUSBChannelDisable)
+                  00003460    00000030                : usbdma.obj (.text:DMAUSBIntHandler)
+                  00003490    00000030                : usbtick.obj (.text:InternalUSBTickInit)
+                  000034c0    00000030                : usbdenum.obj (.text:USBDGetConfiguration)
+                  000034f0    00000030     driverlib.lib : usb.obj (.text:USBEndpointDataPut)
+                  00003520    00000030     usblib.lib : usbringbuf.obj (.text:UpdateIndexAtomic)
+                  00003550    0000002e     driverlib.lib : usb.obj (.text:USBEndpointDataSend)
+                  0000357e    0000002c     usblib.lib : usbdesc.obj (.text:USBDescGet)
+                  000035aa    0000002c                : usbdma.obj (.text:uDMAUSBIntStatus)
+                  000035d6    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  00003600    0000002a     usblib.lib : usbbuffer.obj (.text:HandleRequestBuffer)
+                  0000362a    0000002a                : usbdcdesc.obj (.text:USBDCDConfigDescGetNum)
+                  00003654    00000028                : usbdenum.obj (.text:USBDSetAddress)
+                  0000367c    00000028                : usbdesc.obj (.text:USBDescGetNum)
+                  000036a4    00000028     driverlib.lib : usb.obj (.text:USBIntEnableControl)
+                  000036cc    00000028                   : udma.obj (.text:uDMAChannelModeGet)
+                  000036f4    00000024     usblib.lib : usbdbulk.obj (.text:BulkTickHandler)
+                  00003718    00000024                : usbdbulk.obj (.text:HandleConfigChange)
+                  0000373c    00000024     driverlib.lib : usb.obj (.text:USBDevEndpointDataAck)
+                  00003760    00000024                   : usb.obj (.text:USBEndpointDMADisable)
+                  00003784    00000024                   : usb.obj (.text:USBEndpointDMAEnable)
+                  000037a8    00000024                   : udma.obj (.text:uDMAChannelControlSet)
+                  000037cc    00000022                   : pwm.obj (.text:PWMGenConfigure)
+                  000037ee    00000022     usblib.lib : usbdbulk.obj (.text:USBDBulkRxPacketAvailable)
+                  00003810    00000022                : usbdma.obj (.text:uDMAUSBChannelStatus)
+                  00003832    00000020                : usbdconfig.obj (.text:GetEndpointFIFOSize)
+                  00003852    00000020                : usbbuffer.obj (.text:HandleDataRemaining)
+                  00003872    00000020                : usbdbulk.obj (.text:HandleDisconnect)
+                  00003892    00000020                : usbringbuf.obj (.text:USBRingBufAdvanceRead)
+                  000038b2    00000002     --HOLE-- [fill = 0]
+                  000038b4    00000020                : usbmode.obj (.text:USBStackModeSet)
+                  000038d4    0000001e     driverlib.lib : pwm.obj (.text:PWMPulseWidthSet)
+                  000038f2    0000001e                   : usb.obj (.text:USBULPIRegRead)
+                  00003910    0000001e                   : usb.obj (.text:USBULPIRegWrite)
+                  0000392e    0000001c     usblib.lib : usbdcdesc.obj (.text:USBDCDConfigGetInterface)
+                  0000394a    00000002     --HOLE-- [fill = 0]
+                  0000394c    0000001c                : usbdenum.obj (.text:USBDCDStallEP0)
+                  00003968    0000001c     driverlib.lib : usb.obj (.text:USBEndpointDataAvail)
+                  00003984    0000001c     usblib.lib : usbringbuf.obj (.text:USBRingBufContigFree)
+                  000039a0    0000001a     driverlib.lib : usb.obj (.text:USBEndpointDMAChannel)
+                  000039ba    0000001a     usblib.lib : usbringbuf.obj (.text:USBRingBufWrite)
+                  000039d4    00000018     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  000039ec    00000018     usblib.lib : usbdbulk.obj (.text:SetDeferredOpFlag)
+                  00003a04    00000018                : usbdhandler.obj (.text:USB0DeviceIntHandler)
+                  00003a1c    00000018                : usbbuffer.obj (.text:USBBufferInit)
+                  00003a34    00000018                : usbdcdesc.obj (.text:USBDCDConfigDescGetSize)
+                  00003a4c    00000018                : usbdenum.obj (.text:USBDSetDescriptor)
+                  00003a64    00000018                : usbdenum.obj (.text:USBDSyncFrame)
+                  00003a7c    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00003a94    00000018     driverlib.lib : udma.obj (.text:uDMAChannelDisable)
+                  00003aac    00000018                   : udma.obj (.text:uDMAChannelEnable)
+                  00003ac4    00000016     usblib.lib : usbringbuf.obj (.text:USBRingBufFlush)
+                  00003ada    00000016                : usbringbuf.obj (.text:USBRingBufUsed)
+                  00003af0    00000014                : usbbuffer.obj (.text:HandleTxComplete)
+                  00003b04    00000014     driverlib.lib : sysctl.obj (.text:SysCtlPWMClockSet)
+                  00003b18    00000014                   : sysctl.obj (.text:SysCtlUSBPLLEnable)
+                  00003b2c    00000014                   : usb.obj (.text:USBDMAChannelConfigSet)
+                  00003b40    00000014                   : usb.obj (.text:USBHostResume)
+                  00003b54    00000014                   : usb.obj (.text:USBIntEnableEndpoint)
+                  00003b68    00000014                   : usb.obj (.text:_USBIndexWrite)
+                  00003b7c    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00003b90    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypePWM)
+                  00003ba2    00000012     usblib.lib : usbdbulk.obj (.text:HandleResume)
+                  00003bb4    00000012                : usbdbulk.obj (.text:HandleSuspend)
+                  00003bc6    00000012     driverlib.lib : pwm.obj (.text:PWMOutputState)
+                  00003bd8    00000012                   : usb.obj (.text:USBDMAChannelDisable)
+                  00003bea    00000012                   : usb.obj (.text:USBDMAChannelEnable)
+                  00003bfc    00000012                   : usb.obj (.text:USBDMAChannelIntDisable)
+                  00003c0e    00000012                   : usb.obj (.text:USBDMAChannelIntEnable)
+                  00003c20    00000012     usblib.lib : usbringbuf.obj (.text:USBRingBufFree)
+                  00003c32    00000010     driverlib.lib : interrupt.obj (.text:IntMasterDisable)
+                  00003c42    00000010                   : interrupt.obj (.text:IntMasterEnable)
+                  00003c52    00000010                   : pwm.obj (.text:PWMGenPeriodSet)
+                  00003c62    00000010                   : usb.obj (.text:USBEndpointStatus)
+                  00003c72    00000010     usblib.lib : usbringbuf.obj (.text:USBRingBufContigUsed)
+                  00003c82    00000010                : usbringbuf.obj (.text:USBRingBufWriteOne)
+                  00003c92    0000000e                : usbdma.obj (.text:DMAUSBIntStatusClear)
+                  00003ca0    0000000e                : usbdbulk.obj (.text:USBDBulkTxPacketAvailable)
+                  00003cae    0000000e     driverlib.lib : usb.obj (.text:USBDMAChannelStatus)
+                  00003cbc    0000000e                   : usb.obj (.text:USBDevLPMDisable)
+                  00003cca    0000000e                   : usb.obj (.text:USBDevLPMEnable)
+                  00003cd8    0000000e                   : usb.obj (.text:USBULPIDisable)
+                  00003ce6    0000000e                   : usb.obj (.text:USBULPIEnable)
+                  00003cf4    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00003d02    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsid)
+                  00003d0e    0000000c                   : cpu.obj (.text:CPUcpsie)
+                  00003d1a    0000000c                   : pwm.obj (.text:PWMGenEnable)
+                  00003d26    0000000c                   : usb.obj (.text:USBEndpointPacketCountSet)
+                  00003d32    0000000c                   : usb.obj (.text:USBLPMIntEnable)
+                  00003d3e    0000000c     usblib.lib : usbringbuf.obj (.text:USBRingBufInit)
+                  00003d4a    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00003d56    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00003d62    0000000a     usblib.lib : usbbuffer.obj (.text:USBBufferDataRemoved)
+                  00003d6c    0000000a     driverlib.lib : usb.obj (.text:USBClockEnable)
+                  00003d76    0000000a                   : usb.obj (.text:USBControllerVersion)
+                  00003d80    0000000a                   : usb.obj (.text:USBDMAChannelAddressSet)
+                  00003d8a    0000000a                   : usb.obj (.text:USBDMAChannelCountSet)
+                  00003d94    0000000a                   : usb.obj (.text:USBDevConnect)
+                  00003d9e    0000000a                   : usb.obj (.text:USBDevDisconnect)
+                  00003da8    0000000a                   : usb.obj (.text:USBIntStatusEndpoint)
+                  00003db2    00000008                   : usb.obj (.text:USBDevMode)
+                  00003dba    00000008                   : usb.obj (.text:USBFIFOAddrGet)
+                  00003dc2    00000008                   : usb.obj (.text:USBOTGMode)
+                  00003dca    00000008     usblib.lib : usbdma.obj (.text:iDMAUSBChannelIntDisable)
+                  00003dd2    00000008                : usbdma.obj (.text:iDMAUSBChannelIntEnable)
+                  00003dda    00000006     driverlib.lib : gpio.obj (.text:GPIOPinWrite)
+                  00003de0    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  00003de6    00000006                   : uart.obj (.text:UARTClockSourceSet)
+                  00003dec    00000006     usblib.lib : usbbuffer.obj (.text:USBBufferFlush)
+                  00003df2    00000006     driverlib.lib : usb.obj (.text:USBDMAChannelIntStatus)
+                  00003df8    00000006                   : usb.obj (.text:USBDevLPMConfig)
+                  00003dfe    00000006                   : usb.obj (.text:USBLPMIntStatus)
+                  00003e04    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  00003e0a    00000006     usblib.lib : usbdma.obj (.text:iDMAUSBIntStatus)
+                  00003e10    00000004                : usbdma.obj (.text:DMAUSBStatus)
+                  00003e14    00000004     driverlib.lib : usb.obj (.text:USBDevAddrSet)
+                  00003e18    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
+
+.const     0    00003e1c    00000312     
+                  00003e1c    00000090     driverlib.lib : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00003eac    00000070                   : interrupt.obj (.const)
+                  00003f1c    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00003f88    00000034     usblib.lib : usbdenum.obj (.const:g_psUSBDStdRequests)
+                  00003fbc    00000030     usb_bulk_structs.obj (.const:.string:g_pui8ConfigString)
+                  00003fec    00000030     usblib.lib : usbdbulk.obj (.const:g_sBulkHandlers)
+                  0000401c    00000028     usb_bulk_structs.obj (.const:.string:g_pui8DataInterfaceString)
+                  00004044    00000028     usb_bulk_structs.obj (.const:.string:g_pui8ProductString)
+                  0000406c    00000028     uartstdio.obj (.const)
+                  00004094    00000024     usb_bulk_structs.obj (.const:.string:g_pui8ManufacturerString)
+                  000040b8    0000001c     usblib.lib : usbdbulk.obj (.const)
+                  000040d4    00000018     usb_bulk_structs.obj (.const)
+                  000040ec    00000017     usblib.lib : usbdbulk.obj (.const:.string)
+                  00004103    00000016     usb_bulk_structs.obj (.const:.string)
+                  00004119    00000003     --HOLE-- [fill = 0]
+                  0000411c    00000012     uartstdio.obj (.const:.string)
+
+.cinit     0    00004130    000000d0     
+                  00004130    000000ac     (.cinit..data.load) [load image, compression = rle]
+                  000041dc    0000000c     (__TI_handler_table)
+                  000041e8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000041f0    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000000    00000e69     UNINITIALIZED
+                  20000000    00000400     uartstdio.obj (.bss:g_pcUARTTxBuffer)
+                  20000400    00000400     usb_bulk_structs.obj (.bss:g_pui8USBRxBuffer)
+                  20000800    00000400     usb_bulk_structs.obj (.bss:g_pui8USBTxBuffer)
+                  20000c00    00000110     usblib.lib : usbdma.obj (.bss:g_psUSBDMAInst)
+                  20000d10    00000080     uartstdio.obj (.bss:g_pcUARTRxBuffer)
+                  20000d90    00000050     usblib.lib : usbdenum.obj (.bss:g_psDCDInst)
+                  20000de0    00000040                : usbdenum.obj (.bss:g_pui8DataBufferIn)
+                  20000e20    00000018     (.common:g_pfnTickHandlers)
+                  20000e38    00000018     (.common:g_pvTickInstance)
+                  20000e50    00000004     (.common:g_pfnUSBModeCallback)
+                  20000e54    00000004     (.common:g_ppsDevInfo)
+                  20000e58    00000004     (.common:g_ui32Load)
+                  20000e5c    00000004     (.common:g_ui32PWMClock)
+                  20000e60    00000004     (.common:g_ui32PortNum)
+                  20000e64    00000004     (.common:g_ui32ULPISupport)
+                  20000e68    00000001     (.common:g_bDisableEcho)
+
+.TI.noinit 
+*          0    20000000    00000000     UNINITIALIZED
+
+.stack     0    20000e6c    00000200     UNINITIALIZED
+                  20000e6c    00000200     --HOLE--
+
+.data      0    2000106c    0000012c     UNINITIALIZED
+                  2000106c    00000044     usb_bulk_structs.obj (.data:g_sBulkDevice)
+                  200010b0    00000038     usb_bulk_structs.obj (.data:g_sRxBuffer)
+                  200010e8    00000038     usb_bulk_structs.obj (.data:g_sTxBuffer)
+                  20001120    00000024     usblib.lib : usbdbulk.obj (.data)
+                  20001144    00000015     uartstdio.obj (.data)
+                  20001159    00000003     --HOLE--
+                  2000115c    0000000c     usblib.lib : usbtick.obj (.data)
+                  20001168    00000009                : usbmode.obj (.data)
+                  20001171    00000003     --HOLE--
+                  20001174    00000008     main.obj (.data)
+                  2000117c    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20001184    00000008                                   : exit.obj (.data)
+                  2000118c    00000008     usblib.lib : usbdenum.obj (.data)
+                  20001194    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+
+.TI.persistent 
+*          0    2000106c    00000000     UNINITIALIZED
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000041f0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00004130, load size=000000ac bytes, run addr=2000106c, run size=0000012c bytes, compression=rle
+	.bss: load addr=000041e8, load size=00000008 bytes, run addr=20000000, run size=00000e69 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000041dc records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                            
+-------   ----                            
+000030e9  C$$EXIT                         
+00003d03  CPUcpsid                        
+00003d0f  CPUcpsie                        
+00000cfd  ConfigureUART                   
+000035d7  GPIODirModeSet                  
+000015a5  GPIOPadConfigSet                
+00002eb9  GPIOPinConfigure                
+000039d5  GPIOPinTypeGPIOOutput           
+00003b91  GPIOPinTypePWM                  
+00003ddb  GPIOPinWrite                    
+00002689  IntDisable                      
+000026f1  IntEnable                       
+000027c1  IntIsEnabled                    
+00003c33  IntMasterDisable                
+00003c43  IntMasterEnable                 
+0000321d  InternalUSBRegisterTickHandler  
+000032fd  InternalUSBStartOfFrameTick     
+00003491  InternalUSBTickInit             
+000037cd  PWMGenConfigure                 
+00003d1b  PWMGenEnable                    
+00003c53  PWMGenPeriodSet                 
+00003bc7  PWMOutputState                  
+000038d5  PWMPulseWidthSet                
+00003d57  ResetISR                        
+00000d6d  RxHandler                       
+UNDEFED   SHT$$INIT_ARRAY$$Base           
+UNDEFED   SHT$$INIT_ARRAY$$Limit          
+000016d5  SysCtlClockGet                  
+000017e1  SysCtlClockSet                  
+00003de1  SysCtlDelay                     
+00003b05  SysCtlPWMClockSet               
+00003331  SysCtlPeripheralEnable          
+00002b65  SysCtlPeripheralReset           
+00003b19  SysCtlUSBPLLEnable              
+00000d57  TxHandler                       
+00003de7  UARTClockSourceSet              
+000009c1  UARTEchoSet                     
+0000095b  UARTFlushRx                     
+00000983  UARTFlushTx                     
+00000901  UARTPeek                        
+000008df  UARTRxBytesAvail                
+00000381  UARTStdioConfig                 
+000009f5  UARTStdioIntHandler             
+000008ed  UARTTxBytesFree                 
+0000055b  UARTgetc                        
+000004df  UARTgets                        
+000008bb  UARTprintf                      
+000005c1  UARTvprintf                     
+00000439  UARTwrite                       
+00002b11  ULPIConfigSet                   
+00003a05  USB0DeviceIntHandler            
+00003d63  USBBufferDataRemoved            
+00002949  USBBufferEventCallback          
+00003ded  USBBufferFlush                  
+00003a1d  USBBufferInit                   
+00003d6d  USBClockEnable                  
+00003d77  USBControllerVersion            
+00002461  USBDBulkCompositeInit           
+00002fd9  USBDBulkInit                    
+0000237d  USBDBulkPacketRead              
+00002abd  USBDBulkPacketWrite             
+000037ef  USBDBulkRxPacketAvailable       
+00003ca1  USBDBulkTxPacketAvailable       
+00002bb5  USBDCDConfigDescGet             
+0000362b  USBDCDConfigDescGetNum          
+00003a35  USBDCDConfigDescGetSize         
+0000392f  USBDCDConfigGetInterface        
+000031a9  USBDCDConfigGetInterfaceEndpoint
+0000301d  USBDCDDeviceInfoInit            
+0000131d  USBDCDInit                      
+0000394d  USBDCDStallEP0                  
+00003d81  USBDMAChannelAddressSet         
+00003b2d  USBDMAChannelConfigSet          
+00003d8b  USBDMAChannelCountSet           
+00003bd9  USBDMAChannelDisable            
+00003beb  USBDMAChannelEnable             
+00003bfd  USBDMAChannelIntDisable         
+00003c0f  USBDMAChannelIntEnable          
+00003df3  USBDMAChannelIntStatus          
+00003caf  USBDMAChannelStatus             
+0000357f  USBDescGet                      
+0000367d  USBDescGetNum                   
+00003e15  USBDevAddrSet                   
+00003d95  USBDevConnect                   
+00003d9f  USBDevDisconnect                
+00002215  USBDevEndpointConfigSet         
+0000373d  USBDevEndpointDataAck           
+000033fd  USBDevEndpointStall             
+00002ca5  USBDevEndpointStallClear        
+00002a09  USBDevEndpointStatusClear       
+00003df9  USBDevLPMConfig                 
+00003cbd  USBDevLPMDisable                
+00003ccb  USBDevLPMEnable                 
+00003db3  USBDevMode                      
+00001465  USBDeviceConfig                 
+00002005  USBDeviceConfigAlternate        
+00001aa1  USBDeviceEnumHandler            
+00002f49  USBDeviceEnumResetHandler       
+000011cd  USBDeviceIntHandlerInternal     
+00002c05  USBDeviceResumeTickHandler      
+000039a1  USBEndpointDMAChannel           
+00002d8b  USBEndpointDMAConfigSet         
+00003761  USBEndpointDMADisable           
+00003785  USBEndpointDMAEnable            
+00003969  USBEndpointDataAvail            
+000030a5  USBEndpointDataGet              
+000034f1  USBEndpointDataPut              
+00003551  USBEndpointDataSend             
+00003d27  USBEndpointPacketCountSet       
+00003c63  USBEndpointStatus               
+00003dbb  USBFIFOAddrGet                  
+000031e3  USBFIFOConfigSet                
+00003b41  USBHostResume                   
+000036a5  USBIntEnableControl             
+00003b55  USBIntEnableEndpoint            
+00003255  USBIntStatusControl             
+00003da9  USBIntStatusEndpoint            
+00003d33  USBLPMIntEnable                 
+00003dff  USBLPMIntStatus                 
+00000f0d  USBLibDMAInit                   
+00003dc3  USBOTGMode                      
+00003893  USBRingBufAdvanceRead           
+0000328d  USBRingBufAdvanceWrite          
+00003985  USBRingBufContigFree            
+00003c73  USBRingBufContigUsed            
+00003ac5  USBRingBufFlush                 
+00003c21  USBRingBufFree                  
+00003d3f  USBRingBufInit                  
+00003adb  USBRingBufUsed                  
+000039bb  USBRingBufWrite                 
+00003c83  USBRingBufWriteOne              
+000038b5  USBStackModeSet                 
+00003cd9  USBULPIDisable                  
+00003ce7  USBULPIEnable                   
+000038f3  USBULPIRegRead                  
+00003911  USBULPIRegWrite                 
+2000106c  __STACK_END                     
+00000200  __STACK_SIZE                    
+2000106c  __STACK_TOP                     
+000041f0  __TI_CINIT_Base                 
+00004200  __TI_CINIT_Limit                
+000041dc  __TI_Handler_Table_Base         
+000041e8  __TI_Handler_Table_Limit        
+000025b1  __TI_auto_init                  
+20001184  __TI_cleanup_ptr                
+00003cf5  __TI_decompress_none            
+00003e05  __TI_decompress_rle24           
+20001188  __TI_dtors_ptr                  
+00000000  __TI_static_base__              
+00003d4b  __TI_zero_init                  
+00002687  __aeabi_idiv0                   
+0000228f  __aeabi_memclr                  
+0000228f  __aeabi_memclr4                 
+0000228f  __aeabi_memclr8                 
+00001daf  __aeabi_memcpy                  
+00001daf  __aeabi_memcpy4                 
+00001daf  __aeabi_memcpy8                 
+00002291  __aeabi_memset                  
+00002291  __aeabi_memset4                 
+00002291  __aeabi_memset8                 
+0000312d  __aeabi_uidiv                   
+0000312d  __aeabi_uidivmod                
+ffffffff  __binit__                       
+ffffffff  __c_args__                      
+20000e6c  __stack                         
+00003a7d  _args_main                      
+00002c55  _c_int00                        
+2000117c  _lock                           
+00003b8b  _nop                            
+00003b83  _register_lock                  
+00003b7d  _register_unlock                
+00003e19  _system_pre_init                
+20001180  _unlock                         
+000030ed  abort                           
+ffffffff  binit                           
+00002dd9  copy_in                         
+000030f5  exit                            
+2000115c  g_bUSBTimerInitialized          
+20001168  g_iUSBMode                      
+20000e20  g_pfnTickHandlers               
+00000000  g_pfnVectors                    
+000040d0  g_ppBulkConfigDescriptors       
+20000e54  g_ppsDevInfo                    
+000040d4  g_ppui8StringDescriptors        
+2000113c  g_psBulkSections                
+20000d90  g_psDCDInst                     
+20001132  g_pui8BulkDescriptor            
+20001120  g_pui8BulkDeviceDescriptor      
+000040ec  g_pui8BulkInterface             
+00003fbc  g_pui8ConfigString              
+0000401c  g_pui8DataInterfaceString       
+00004103  g_pui8LangDescriptor            
+00004094  g_pui8ManufacturerString        
+00004044  g_pui8ProductString             
+00004107  g_pui8SerialNumberString        
+20000400  g_pui8USBRxBuffer               
+20000800  g_pui8USBTxBuffer               
+20000e38  g_pvTickInstance                
+000040c8  g_sBulkConfigHeader             
+000040b8  g_sBulkConfigSection            
+2000106c  g_sBulkDevice                   
+00003fec  g_sBulkHandlers                 
+000040c0  g_sBulkInterfaceSection         
+200010b0  g_sRxBuffer                     
+200010e8  g_sTxBuffer                     
+20001160  g_ui32CurrentUSBTick            
+20001164  g_ui32USBSOFCount               
+2000116c  g_ui32WaitTicks                 
+00000b81  main                            
+20001194  main_func_sp                    
+00001daf  memcpy                          
+00002297  memset                          
+00002f91  uDMAChannelAttributeDisable     
+000037a9  uDMAChannelControlSet           
+00003a95  uDMAChannelDisable              
+00003aad  uDMAChannelEnable               
+000036cd  uDMAChannelModeGet              
+00002115  uDMAChannelTransferSet          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                            
+-------   ----                            
+00000000  __TI_static_base__              
+00000000  g_pfnVectors                    
+00000200  __STACK_SIZE                    
+00000381  UARTStdioConfig                 
+00000439  UARTwrite                       
+000004df  UARTgets                        
+0000055b  UARTgetc                        
+000005c1  UARTvprintf                     
+000008bb  UARTprintf                      
+000008df  UARTRxBytesAvail                
+000008ed  UARTTxBytesFree                 
+00000901  UARTPeek                        
+0000095b  UARTFlushRx                     
+00000983  UARTFlushTx                     
+000009c1  UARTEchoSet                     
+000009f5  UARTStdioIntHandler             
+00000b81  main                            
+00000cfd  ConfigureUART                   
+00000d57  TxHandler                       
+00000d6d  RxHandler                       
+00000f0d  USBLibDMAInit                   
+000011cd  USBDeviceIntHandlerInternal     
+0000131d  USBDCDInit                      
+00001465  USBDeviceConfig                 
+000015a5  GPIOPadConfigSet                
+000016d5  SysCtlClockGet                  
+000017e1  SysCtlClockSet                  
+00001aa1  USBDeviceEnumHandler            
+00001daf  __aeabi_memcpy                  
+00001daf  __aeabi_memcpy4                 
+00001daf  __aeabi_memcpy8                 
+00001daf  memcpy                          
+00002005  USBDeviceConfigAlternate        
+00002115  uDMAChannelTransferSet          
+00002215  USBDevEndpointConfigSet         
+0000228f  __aeabi_memclr                  
+0000228f  __aeabi_memclr4                 
+0000228f  __aeabi_memclr8                 
+00002291  __aeabi_memset                  
+00002291  __aeabi_memset4                 
+00002291  __aeabi_memset8                 
+00002297  memset                          
+0000237d  USBDBulkPacketRead              
+00002461  USBDBulkCompositeInit           
+000025b1  __TI_auto_init                  
+00002687  __aeabi_idiv0                   
+00002689  IntDisable                      
+000026f1  IntEnable                       
+000027c1  IntIsEnabled                    
+00002949  USBBufferEventCallback          
+00002a09  USBDevEndpointStatusClear       
+00002abd  USBDBulkPacketWrite             
+00002b11  ULPIConfigSet                   
+00002b65  SysCtlPeripheralReset           
+00002bb5  USBDCDConfigDescGet             
+00002c05  USBDeviceResumeTickHandler      
+00002c55  _c_int00                        
+00002ca5  USBDevEndpointStallClear        
+00002d8b  USBEndpointDMAConfigSet         
+00002dd9  copy_in                         
+00002eb9  GPIOPinConfigure                
+00002f49  USBDeviceEnumResetHandler       
+00002f91  uDMAChannelAttributeDisable     
+00002fd9  USBDBulkInit                    
+0000301d  USBDCDDeviceInfoInit            
+000030a5  USBEndpointDataGet              
+000030e9  C$$EXIT                         
+000030ed  abort                           
+000030f5  exit                            
+0000312d  __aeabi_uidiv                   
+0000312d  __aeabi_uidivmod                
+000031a9  USBDCDConfigGetInterfaceEndpoint
+000031e3  USBFIFOConfigSet                
+0000321d  InternalUSBRegisterTickHandler  
+00003255  USBIntStatusControl             
+0000328d  USBRingBufAdvanceWrite          
+000032fd  InternalUSBStartOfFrameTick     
+00003331  SysCtlPeripheralEnable          
+000033fd  USBDevEndpointStall             
+00003491  InternalUSBTickInit             
+000034f1  USBEndpointDataPut              
+00003551  USBEndpointDataSend             
+0000357f  USBDescGet                      
+000035d7  GPIODirModeSet                  
+0000362b  USBDCDConfigDescGetNum          
+0000367d  USBDescGetNum                   
+000036a5  USBIntEnableControl             
+000036cd  uDMAChannelModeGet              
+0000373d  USBDevEndpointDataAck           
+00003761  USBEndpointDMADisable           
+00003785  USBEndpointDMAEnable            
+000037a9  uDMAChannelControlSet           
+000037cd  PWMGenConfigure                 
+000037ef  USBDBulkRxPacketAvailable       
+00003893  USBRingBufAdvanceRead           
+000038b5  USBStackModeSet                 
+000038d5  PWMPulseWidthSet                
+000038f3  USBULPIRegRead                  
+00003911  USBULPIRegWrite                 
+0000392f  USBDCDConfigGetInterface        
+0000394d  USBDCDStallEP0                  
+00003969  USBEndpointDataAvail            
+00003985  USBRingBufContigFree            
+000039a1  USBEndpointDMAChannel           
+000039bb  USBRingBufWrite                 
+000039d5  GPIOPinTypeGPIOOutput           
+00003a05  USB0DeviceIntHandler            
+00003a1d  USBBufferInit                   
+00003a35  USBDCDConfigDescGetSize         
+00003a7d  _args_main                      
+00003a95  uDMAChannelDisable              
+00003aad  uDMAChannelEnable               
+00003ac5  USBRingBufFlush                 
+00003adb  USBRingBufUsed                  
+00003b05  SysCtlPWMClockSet               
+00003b19  SysCtlUSBPLLEnable              
+00003b2d  USBDMAChannelConfigSet          
+00003b41  USBHostResume                   
+00003b55  USBIntEnableEndpoint            
+00003b7d  _register_unlock                
+00003b83  _register_lock                  
+00003b8b  _nop                            
+00003b91  GPIOPinTypePWM                  
+00003bc7  PWMOutputState                  
+00003bd9  USBDMAChannelDisable            
+00003beb  USBDMAChannelEnable             
+00003bfd  USBDMAChannelIntDisable         
+00003c0f  USBDMAChannelIntEnable          
+00003c21  USBRingBufFree                  
+00003c33  IntMasterDisable                
+00003c43  IntMasterEnable                 
+00003c53  PWMGenPeriodSet                 
+00003c63  USBEndpointStatus               
+00003c73  USBRingBufContigUsed            
+00003c83  USBRingBufWriteOne              
+00003ca1  USBDBulkTxPacketAvailable       
+00003caf  USBDMAChannelStatus             
+00003cbd  USBDevLPMDisable                
+00003ccb  USBDevLPMEnable                 
+00003cd9  USBULPIDisable                  
+00003ce7  USBULPIEnable                   
+00003cf5  __TI_decompress_none            
+00003d03  CPUcpsid                        
+00003d0f  CPUcpsie                        
+00003d1b  PWMGenEnable                    
+00003d27  USBEndpointPacketCountSet       
+00003d33  USBLPMIntEnable                 
+00003d3f  USBRingBufInit                  
+00003d4b  __TI_zero_init                  
+00003d57  ResetISR                        
+00003d63  USBBufferDataRemoved            
+00003d6d  USBClockEnable                  
+00003d77  USBControllerVersion            
+00003d81  USBDMAChannelAddressSet         
+00003d8b  USBDMAChannelCountSet           
+00003d95  USBDevConnect                   
+00003d9f  USBDevDisconnect                
+00003da9  USBIntStatusEndpoint            
+00003db3  USBDevMode                      
+00003dbb  USBFIFOAddrGet                  
+00003dc3  USBOTGMode                      
+00003ddb  GPIOPinWrite                    
+00003de1  SysCtlDelay                     
+00003de7  UARTClockSourceSet              
+00003ded  USBBufferFlush                  
+00003df3  USBDMAChannelIntStatus          
+00003df9  USBDevLPMConfig                 
+00003dff  USBLPMIntStatus                 
+00003e05  __TI_decompress_rle24           
+00003e15  USBDevAddrSet                   
+00003e19  _system_pre_init                
+00003fbc  g_pui8ConfigString              
+00003fec  g_sBulkHandlers                 
+0000401c  g_pui8DataInterfaceString       
+00004044  g_pui8ProductString             
+00004094  g_pui8ManufacturerString        
+000040b8  g_sBulkConfigSection            
+000040c0  g_sBulkInterfaceSection         
+000040c8  g_sBulkConfigHeader             
+000040d0  g_ppBulkConfigDescriptors       
+000040d4  g_ppui8StringDescriptors        
+000040ec  g_pui8BulkInterface             
+00004103  g_pui8LangDescriptor            
+00004107  g_pui8SerialNumberString        
+000041dc  __TI_Handler_Table_Base         
+000041e8  __TI_Handler_Table_Limit        
+000041f0  __TI_CINIT_Base                 
+00004200  __TI_CINIT_Limit                
+20000400  g_pui8USBRxBuffer               
+20000800  g_pui8USBTxBuffer               
+20000d90  g_psDCDInst                     
+20000e20  g_pfnTickHandlers               
+20000e38  g_pvTickInstance                
+20000e54  g_ppsDevInfo                    
+20000e6c  __stack                         
+2000106c  __STACK_END                     
+2000106c  __STACK_TOP                     
+2000106c  g_sBulkDevice                   
+200010b0  g_sRxBuffer                     
+200010e8  g_sTxBuffer                     
+20001120  g_pui8BulkDeviceDescriptor      
+20001132  g_pui8BulkDescriptor            
+2000113c  g_psBulkSections                
+2000115c  g_bUSBTimerInitialized          
+20001160  g_ui32CurrentUSBTick            
+20001164  g_ui32USBSOFCount               
+20001168  g_iUSBMode                      
+2000116c  g_ui32WaitTicks                 
+2000117c  _lock                           
+20001180  _unlock                         
+20001184  __TI_cleanup_ptr                
+20001188  __TI_dtors_ptr                  
+20001194  main_func_sp                    
+ffffffff  __binit__                       
+ffffffff  __c_args__                      
+ffffffff  binit                           
+UNDEFED   SHT$$INIT_ARRAY$$Base           
+UNDEFED   SHT$$INIT_ARRAY$$Limit          
+
+[218 symbols]
